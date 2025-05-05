@@ -1,0 +1,28 @@
+| Alan Adı     | Türü             | Açıklama                                                        |
+| ------------ | ---------------- | --------------------------------------------------------------- |
+| `id`         | int              | Otomatik artan benzersiz ID                                     |
+| `title`      | string           | Kısa başlık, görev adı                                          |
+| `content`    | string           | Daha uzun açıklama (opsiyonel ama faydalı)                      |
+| `priority`   | string           | `"low"`, `"medium"`, `"high"` gibi önem düzeyi                  |
+| `category`   | string           | `"work"`, `"personal"`, `"school"` vs.                          |
+| `created_at` | string (ISO8601) | Zaman damgası. `time.Now().Format(time.RFC3339)` ile alınabilir |
+| `done`       | bool             | Görev tamamlandı mı? (true/false)                               |
+
+
+listelerken
+id ye göre sırala
+priority ye sırala
+categorik sırala
+createdAt sırala
+
+tamamlanmamışları listele
+
+menü
+listele
+|
+|_ id priority category createdAt
+
+ekle -> oto id, isDone false
+güncelle ?????
+sil -> id seçilerek
+tamamla 
