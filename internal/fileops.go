@@ -7,8 +7,8 @@ import (
 	"github.com/furkankorkmaz309/todo-cli/models"
 )
 
-func SaveFile(filename string, values []models.Todo) error {
-	file, err := os.Create("./data/" + filename)
+func SaveTodos(filename string, values []models.Todo) error {
+	file, err := os.Create("../../data/" + filename)
 
 	if err != nil {
 		return err
@@ -26,8 +26,8 @@ func SaveFile(filename string, values []models.Todo) error {
 	return nil
 }
 
-func LoadFile(filename string) ([]models.Todo, error) {
-	file, err := os.Open("./data/" + filename)
+func LoadTodos(filename string) ([]models.Todo, error) {
+	file, err := os.Open("../../data/" + filename)
 
 	if err != nil {
 		return nil, err
