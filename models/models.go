@@ -1,19 +1,21 @@
 package models
 
-import "time"
-
 type Todo struct {
-	ID        int       `json:"id"`
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
-	Priority  int       `json:"priority"`
-	Category  string    `json:"category"`
-	CreatedAt time.Time `json:"created_at"`
-	IsDone    bool      `json:""is_done`
+	ID        int    `json:"id"`
+	Title     string `json:"title"`
+	Content   string `json:"content"`
+	Priority  int    `json:"priority"`
+	Category  int    `json:"category"`
+	CreatedAt string `json:"created_at"`
+	IsDone    bool   `json:"is_done"`
+}
+
+type Category struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
 }
 
 type Manager struct {
-	Todos []Todo
+	Categories []Category
+	Todos      []Todo
 }
-
-var Todos []Todo

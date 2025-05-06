@@ -2,6 +2,7 @@ package internal
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/furkankorkmaz309/todo-cli/models"
 )
@@ -28,6 +29,23 @@ func AddTodo(manager *models.Manager) {
 			break
 		}
 	}
+
+	// list category kısmı güzel bir arayüz ile yapılacak!
+	var categoryID int
+	listCategories(manager)
+	for {
+		fmt.Print("Category ID : ")
+		fmt.Scan(&categoryID)
+
+		if categoryID > len(manager.Categories) || categoryID < 1 {
+			fmt.Printf("Category ID should be in range 1 to %v\n", len(manager.Categories))
+		} else {
+			newTodo.Category = categoryID
+			break
+		}
+	}
+
+	newTodo.CreatedAt = time.Now().Format(time.RFC822)
 
 	manager.Todos = append(manager.Todos, newTodo)
 }
