@@ -24,9 +24,6 @@ func AddTodo(manager *models.Manager, app *models.Logger) {
 
 	newTodo.CreatedAt = time.Now()
 
-	// newTodo.CreatedAt = time.Now().Format(time.RFC822)
-	//bu şekil yaparsak kayıt daha düzgün ama string olarak kaydedilir
-
 	newTodo.DueDate = takeDueDate(0, app)
 
 	manager.Todos = append(manager.Todos, newTodo)

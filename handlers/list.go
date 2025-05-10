@@ -16,11 +16,11 @@ func listCategories(manager *models.Manager) {
 	data := [][]string{}
 
 	for _, v := range manager.Categories {
-		data = append(data, []string{strconv.Itoa(v.ID), v.Name})
+		data = append(data, []string{strconv.Itoa(v.ID), v.Icon, v.Name, v.Description})
 	}
 
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"ID", "Name"})
+	table.SetHeader([]string{"ID", "Name", "Description", "Icon"})
 
 	for _, v := range data {
 		table.Append(v)
@@ -28,11 +28,22 @@ func listCategories(manager *models.Manager) {
 
 	table.SetHeaderColor(
 		tablewriter.Colors{tablewriter.Bold, tablewriter.FgBlueColor}, // id
-		tablewriter.Colors{tablewriter.Bold, tablewriter.FgBlueColor}) // name
+		tablewriter.Colors{tablewriter.Bold, tablewriter.FgBlueColor}, // name
+		tablewriter.Colors{tablewriter.Bold, tablewriter.FgBlueColor}, // description
+		tablewriter.Colors{tablewriter.Bold, tablewriter.FgBlueColor}) // icon
 
 	table.SetColumnColor(
 		tablewriter.Colors{tablewriter.FgBlueColor}, // id
-		tablewriter.Colors{tablewriter.FgBlueColor}) // name
+		tablewriter.Colors{tablewriter.FgBlueColor}, // name
+		tablewriter.Colors{tablewriter.FgBlueColor}, // description
+		tablewriter.Colors{tablewriter.FgBlueColor}) // icon
+
+	table.SetRowLine(true)
+	table.SetCenterSeparator("*")
+	table.SetColumnSeparator("╪")
+	table.SetRowSeparator("-")
+
+	table.SetAlignment(tablewriter.ALIGN_LEFT)
 
 	table.Render()
 }
@@ -68,14 +79,18 @@ func ListTodos(manager *models.Manager, app *models.Logger) {
 			app.ErrorLog.Println("something is wrong but how")
 		}
 
-		var category string
+		var categoryName string
+		var icon string
 
 		for _, vCategory := range manager.Categories {
 			if v.Category == vCategory.ID {
-				category = vCategory.Name
+				categoryName = vCategory.Name
+				icon = vCategory.Icon
 				break
 			}
 		}
+
+		category := fmt.Sprintf("%v ( %v )", categoryName, icon)
 
 		data = append(data, []string{strconv.Itoa(v.ID), v.Title, v.Content, priority, category, v.DueDate.Format("2006-01-02"), isDone, v.CreatedAt.Format("2006-01-02 15:04")})
 	}

@@ -9,7 +9,8 @@ import (
 
 func saveFile[T any](filename string, values []T) error {
 	file, err := os.Create("../../data/" + filename)
-
+	// source path ile bul
+	// process.cvd node da böyle go bak
 	if err != nil {
 		return err
 	}

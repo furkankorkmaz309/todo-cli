@@ -28,8 +28,6 @@ func CompleteTodo(manager *models.Manager, app *models.Logger) {
 	}
 }
 
-// buraya tamamlandıktan sonra arşive alınması eklenebilir
-
 func UpdateTodo(manager *models.Manager, app *models.Logger) {
 	var id int
 	isHere := false

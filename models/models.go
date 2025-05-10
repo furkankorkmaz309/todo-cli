@@ -21,7 +21,7 @@ type ArchivedTodo struct {
 	Title      string    `json:"title"`
 	Content    string    `json:"content"`
 	Priority   int       `json:"priority"`
-	Category   int       `json:"category"`
+	CategoryID int       `json:"category_id"`
 	CreatedAt  time.Time `json:"created_at"`
 	DueDate    time.Time `json:"due_date"`
 	IsDone     bool      `json:"is_done"`
@@ -29,8 +29,10 @@ type ArchivedTodo struct {
 }
 
 type Category struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
+	ID          int    `json:"id"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Icon        string `json:"icon"`
 }
 
 type Manager struct {
