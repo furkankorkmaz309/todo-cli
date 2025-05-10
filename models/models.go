@@ -1,13 +1,31 @@
 package models
 
+import (
+	"log"
+	"time"
+)
+
 type Todo struct {
-	ID        int    `json:"id"`
-	Title     string `json:"title"`
-	Content   string `json:"content"`
-	Priority  int    `json:"priority"`
-	Category  int    `json:"category"`
-	CreatedAt string `json:"created_at"`
-	IsDone    bool   `json:"is_done"`
+	ID        int       `json:"id"`
+	Title     string    `json:"title"`
+	Content   string    `json:"content"`
+	Priority  int       `json:"priority"`
+	Category  int       `json:"category"`
+	CreatedAt time.Time `json:"created_at"`
+	DueDate   time.Time `json:"due_date"`
+	IsDone    bool      `json:"is_done"`
+}
+
+type ArchivedTodo struct {
+	ID         int       `json:"id"`
+	Title      string    `json:"title"`
+	Content    string    `json:"content"`
+	Priority   int       `json:"priority"`
+	Category   int       `json:"category"`
+	CreatedAt  time.Time `json:"created_at"`
+	DueDate    time.Time `json:"due_date"`
+	IsDone     bool      `json:"is_done"`
+	ArchivedAt time.Time `json:"archived_at"`
 }
 
 type Category struct {
@@ -16,6 +34,20 @@ type Category struct {
 }
 
 type Manager struct {
-	Categories []Category
-	Todos      []Todo
+	Categories    []Category
+	Todos         []Todo
+	ArchivedTodos []ArchivedTodo
+}
+
+type Logger struct {
+	InfoLog  *log.Logger
+	ErrorLog *log.Logger
+}
+
+type TodoApp struct {
+	Manager      *Manager
+	Logger       *Logger
+	TodoFile     string
+	CategoryFile string
+	ArchivedFile string
 }

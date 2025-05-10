@@ -1,20 +1,30 @@
+BİTENLER
+-----------
 menü
-listele
-|
-|_ id priority category createdAt sırala
-|
-|_ tamamlanmamışları önce listele
+jsona kaydetme 
+ekleme
+silme
+görevi tamamlama
+tamamlanmışları silme
+bir görevin tamamını güncelleme
+structa DueDate verisi
+silinen görevlerin arşive taşınması
+info ve error log.New ile printlenmesi
+id, önem, oluşturulma tarihi, bitiş tarihi, kategori, tamamlanıp tamamlanmamasına göre sıralanması
+menü düzeni değişti
+sort menüsü eklendi
+todo ve category listelerken ufak da olsa bir arayüz eklendi
+main.go app.go ve TodoApp struct sayesinde temiz hale geldi gpt sağolsun
 
 
-ekle -> oto id, isDone false ++++++++++++
-güncelle ?????
-sil -> id seçilerek +++++++++++
-tamamla ++++++++++
+EKLENECEK
+-----------
+category ve todos içine düzgün veriler koy
 
+yorum satırları ekle
 
-category json file düzenle isimler güzel olsun
-category printlemeyi düzelt güzel olsun
+user ve en azından bcrypt ile hashle
+
+henüz bilmediğim için sql ve testing de ilerleyen zamanlarda eklenecek.
 
 benim yapmam imkansız ama category str yapılıp otomatik title veya contentten alınabilir mi bak
-
-tamamlanmış görevleri farklı bir dosyaya alabilirim
