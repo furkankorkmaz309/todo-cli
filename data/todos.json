@@ -1,0 +1,32 @@
+[
+ {
+  "id": 1,
+  "title": "t1",
+  "content": "c1",
+  "priority": 1,
+  "category_id": 1,
+  "created_at": "2025-05-10T22:24:16.885243781+03:00",
+  "due_date": "2026-01-01T00:00:00Z",
+  "is_done": false
+ },
+ {
+  "id": 2,
+  "title": "t2",
+  "content": "c2",
+  "priority": 2,
+  "category_id": 2,
+  "created_at": "2025-05-10T22:24:34.228508362+03:00",
+  "due_date": "2026-02-02T00:00:00Z",
+  "is_done": false
+ },
+ {
+  "id": 3,
+  "title": "t3",
+  "content": "c3",
+  "priority": 3,
+  "category_id": 3,
+  "created_at": "2025-05-11T12:48:19.384303991+03:00",
+  "due_date": "2026-03-03T00:00:00Z",
+  "is_done": false
+ }
+]

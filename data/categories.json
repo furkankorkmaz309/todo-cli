@@ -1,0 +1,62 @@
+[
+ {
+  "id": 1,
+  "name": "Work",
+  "description": "Job-related tasks and projects.",
+  "icon": "💼"
+ },
+ {
+  "id": 2,
+  "name": "Personal",
+  "description": "Hobbies and personal goals.",
+  "icon": "🧘"
+ },
+ {
+  "id": 3,
+  "name": "Shopping",
+  "description": "Things to buy or restock.",
+  "icon": "🛒"
+ },
+ {
+  "id": 4,
+  "name": "Fitness",
+  "description": "Exercise and workout plans.",
+  "icon": " 🏋️"
+ },
+ {
+  "id": 5,
+  "name": "Finance",
+  "description": "Bills, savings, and expenses.",
+  "icon": "💰"
+ },
+ {
+  "id": 6,
+  "name": "Study",
+  "description": "Learning and coursework.",
+  "icon": "📚"
+ },
+ {
+  "id": 7,
+  "name": "Travel",
+  "description": "Trip planning and packing.",
+  "icon": " ✈️"
+ },
+ {
+  "id": 8,
+  "name": "Health",
+  "description": "Medical and wellness tasks.",
+  "icon": "🩺"
+ },
+ {
+  "id": 9,
+  "name": "Entertainment",
+  "description": "Movies, books, and games.",
+  "icon": "🎮"
+ },
+ {
+  "id": 10,
+  "name": "Errands",
+  "description": "Quick everyday tasks.",
+  "icon": "📌"
+ }
+]
